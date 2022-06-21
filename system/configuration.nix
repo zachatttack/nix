@@ -22,6 +22,13 @@
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
+  # Flakes
+  nix.package = pkgs.nixFlakes;
+  nix.extraOptions = ''
+      experimental-features = nix-command flakes
+  '';
+  
+
   # Enable networking
   networking.networkmanager.enable = true;
 
@@ -85,6 +92,7 @@
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     gnome3.gnome-tweaks
+    remmina
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
