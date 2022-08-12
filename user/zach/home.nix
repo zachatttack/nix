@@ -30,11 +30,12 @@
     pinentryFlavor = "qt";
   };
   
-  # nixpkgs.overlays = [
-  #   (import (builtins.fetchTarball {
-  #     url = https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz;
-  #   }))
-  # ];
+ nixpkgs.overlays = [
+   (import (builtins.fetchTarball {
+     url = https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz;
+		 sha256 = "100nh32vlyw48zl0m4y258pdsb0bmjlqlarahk5svv6g25plpzrv";
+   }))
+ ];
 
   home.packages = with pkgs; [
     alacritty
@@ -57,5 +58,13 @@
     neofetch
     pinentry_qt
     rnix-lsp
+    go
+    usbutils
+    texlive.combined.scheme-medium
+    sumneko-lua-language-server
+    okular
+    clang-tools
+    pandoc
+    tmux
   ];
 }

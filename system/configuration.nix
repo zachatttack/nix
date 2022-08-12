@@ -28,6 +28,8 @@
       experimental-features = nix-command flakes
   '';
   
+  #Docker
+  virtualisation.docker.enable = true;
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -81,7 +83,7 @@
     isNormalUser = true;
     description = "zach";
     shell = pkgs.zsh;
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "dialout" "docker"];
   };
 
   # Allow unfree packages

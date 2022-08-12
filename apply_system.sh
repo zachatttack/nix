@@ -1,4 +1,4 @@
 #!/bin/sh
-pushd ~/nix
+pushd ~/nix-config
 sudo nixos-rebuild switch --flake .#
 popd
