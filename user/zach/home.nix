@@ -66,5 +66,8 @@
     clang-tools
     pandoc
     tmux
+    runelite
+    steam
+    steam-run-native
   ];
 }
