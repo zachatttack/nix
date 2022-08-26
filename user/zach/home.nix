@@ -69,5 +69,11 @@
     runelite
     steam
     steam-run-native
+    adoptopenjdk-icedtea-web
+    exa
+    fzf
+    yarn
+    obsidian
+    nfs-utils
   ];
 }
