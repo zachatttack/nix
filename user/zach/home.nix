@@ -24,7 +24,13 @@
   programs.gpg = {
     enable = true;
   };
-
+  gtk = {
+      enable = true;
+      theme = {
+        name = "Materia-dark";
+        package = pkgs.materia-theme;
+      };
+  };
   services.gpg-agent = {
     enable = true;
     pinentryFlavor = "qt";
@@ -73,7 +79,14 @@
     exa
     fzf
     yarn
+    nodejs
+    nodePackages.live-server
     obsidian
     nfs-utils
+    gnome.nautilus
+    lxappearance
+    feh
+    vimPlugins.markdown-preview-nvim
+    picom
   ];
 }

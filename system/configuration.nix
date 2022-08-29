@@ -54,6 +54,13 @@
   services.xserver = {
     layout = "us";
     xkbVariant = "";
+    libinput = {
+      enable = true;
+      # disabling mouse acceleration
+      mouse = {
+        accelProfile = "flat";
+      };
+    };
   };
 
   # Enable CUPS to print documents.
