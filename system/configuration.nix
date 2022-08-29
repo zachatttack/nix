@@ -102,10 +102,25 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    gnome3.gnome-tweaks
-    remmina
+    adoptopenjdk-icedtea-web
+    alacritty
     awesome
+    discord
+    feh
+    firefox
+    gnome.nautilus
+    gnome3.gnome-tweaks
+    lxappearance
+    nfs-utils
+    obsidian
+    okular
+    picom
+    remmina
+    runelite
+    steam
+    steam-run-native
+    usbutils
+    vim 
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

@@ -44,49 +44,28 @@
  ];
 
   home.packages = with pkgs; [
-    alacritty
-    stow
-    git
-    zsh
-    curl
-    ansible
-    git-crypt
-    gnupg
-    wget
-    firefox
-    neovim
-    gcc
-    gnumake
-    cmake
-    unzip
-    discord
-    python38
-    neofetch
-    pinentry_qt
-    rnix-lsp
-    go
-    usbutils
-    texlive.combined.scheme-medium
-    sumneko-lua-language-server
-    okular
     clang-tools
-    pandoc
-    tmux
-    runelite
-    steam
-    steam-run-native
-    adoptopenjdk-icedtea-web
+    cmake
+    curl
     exa
     fzf
-    yarn
-    nodejs
-    nodePackages.live-server
-    obsidian
-    nfs-utils
-    gnome.nautilus
-    lxappearance
-    feh
-    vimPlugins.markdown-preview-nvim
-    picom
+    gcc
+    git
+    git-crypt
+    gnumake
+    gnupg
+    go
+    neofetch
+    neovim
+    pandoc
+    pinentry_qt
+    python38
+    rnix-lsp
+    sumneko-lua-language-server
+    texlive.combined.scheme-medium
+    tmux
+    unzip
+    wget
+    zsh
   ];
 }
