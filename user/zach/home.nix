@@ -50,7 +50,6 @@
     exa
     fzf
     gcc
-    git
     git-crypt
     gnumake
     gnupg
@@ -68,4 +67,13 @@
     wget
     zsh
   ];
+   programs.git = {
+     enable = true;
+     userName = "Zach Thomas";
+     userEmail = "zach.thomas1.zt@gmail.com";
+  };
+
 }
+
+
+
