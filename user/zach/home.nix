@@ -99,12 +99,23 @@
       g = "git";
       gs = "git status";
     };
+    sessionVariables = {
+      # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/tmux#configuration-variables
+      # automatically start tmux
+      ZSH_TMUX_AUTOSTART = "true";
+      ZSH_TMUX_CONFIG = "$XDG_CONFIG_HOME/tmux/tmux.conf";
+    };
+    oh-my-zsh = { 
+      enable = true;
+      plugins = [ "tmux" ]; 
+    };
   };
 
   programs.tmux = {
     enable = true;
     baseIndex = 1;
     shortcut = "a";
+    escapeTime = 0;
     extraConfig = ''
         is_vim="ps -o state= -o comm= -t '#{pane_tty}' \
             | grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|n?vim?x?)(diff)?$'"
