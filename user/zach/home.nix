@@ -18,7 +18,6 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-  # programs.zsh.enable = true;
   nixpkgs.config.allowUnfree = true;
 
   programs.gpg = {
@@ -64,6 +63,7 @@
     texlive.combined.scheme-medium
     unzip
     wget
+    zsh-autosuggestions
   ];
 
   programs.git = {
@@ -85,8 +85,9 @@
 
   programs.zsh = {
     enable = true;
-    enableAutosuggestions = true;
     dotDir = ".config/zsh";
+    enableAutosuggestions = true;
+    enableSyntaxHighlighting = true;
     shellAliases = {
       v = "nvim";
       ll = "ls -l";
@@ -113,6 +114,7 @@
 
   programs.tmux = {
     enable = true;
+    aggressiveResize = true;
     baseIndex = 1;
     shortcut = "a";
     escapeTime = 0;
@@ -136,6 +138,7 @@
         bind-key -T copy-mode-vi 'C-l' select-pane -R
         bind-key -T copy-mode-vi 'C-\' select-pane -l
         bind-key -T copy-mode-vi 'C-Space' select-pane -t:.+
+        bind-key R source-file $XDG_CONFIG_HOME/tmux/tmux.conf \; display-message "$XDG_CONFIG_HOME/tmux/tmux.conf reloaded"
     '';
   };
   programs.starship = {
