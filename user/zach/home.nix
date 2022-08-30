@@ -65,12 +65,41 @@
     tmux
     unzip
     wget
-    zsh
   ];
-   programs.git = {
+
+  programs.git = {
      enable = true;
      userName = "Zach Thomas";
      userEmail = "zach.thomas1.zt@gmail.com";
+     extraConfig = {
+        init = {
+          defaultBranch = "main";
+        };
+        pull = {
+          rebase = false;
+        };
+        core = {
+          editor = "nvim";
+        };
+     };
+  };
+
+  programs.zsh = {
+    enable = true;
+    enableAutosuggestions = true;
+    dotDir = ".config/zsh";
+    shellAliases = {
+      v = "nvim";
+      ll = "ls -l";
+      ls = "exa";
+      la = "exa -a";
+      grep = "grep --color=auto";
+      cp = "cp -i";
+      mv = "mv -i";
+      rm = "rm -i";
+      g = "git";
+      gs = "git status";
+    };
   };
 
 }
