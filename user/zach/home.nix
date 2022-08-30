@@ -127,6 +127,11 @@
         bind-key -T copy-mode-vi 'C-Space' select-pane -t:.+
     '';
   };
+  programs.starship = {
+          enable = true;
+          enableZshIntegration = true;
+          # https://starship.rs/config/#prompt
+  };
 
 }
 
