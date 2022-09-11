@@ -114,11 +114,14 @@
 
   programs.tmux = {
     enable = true;
-    aggressiveResize = true;
+    aggressiveResize = false;
     baseIndex = 1;
     shortcut = "a";
     escapeTime = 0;
     extraConfig = ''
+        # Mouse works as expected
+        set-option -g mouse on
+
         is_vim="ps -o state= -o comm= -t '#{pane_tty}' \
             | grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|n?vim?x?)(diff)?$'"
         bind-key -n 'C-h' if-shell "$is_vim" 'send-keys C-h' 'select-pane -L'
@@ -138,7 +141,7 @@
         bind-key -T copy-mode-vi 'C-l' select-pane -R
         bind-key -T copy-mode-vi 'C-\' select-pane -l
         bind-key -T copy-mode-vi 'C-Space' select-pane -t:.+
-        bind-key R source-file $XDG_CONFIG_HOME/tmux/tmux.conf \; display-message "$XDG_CONFIG_HOME/tmux/tmux.conf reloaded"
+        bind-key R source-file $/home/zach/.config/tmux/tmux.conf \; display-message "/home/zach/.config/tmux/tmux.conf reloaded"
     '';
   };
   programs.starship = {
