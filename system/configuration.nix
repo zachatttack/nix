@@ -99,6 +99,14 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  my-python-packages = python-packages: with python-packages; [
+    pandas
+    requests
+    # other python packages you want
+  ]; 
+  python-with-my-packages = python3.withPackages my-python-packages;
+
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -110,6 +118,7 @@
     firefox
     gnome.nautilus
     gnome3.gnome-tweaks
+    libreoffice
     lxappearance
     nfs-utils
     obsidian
