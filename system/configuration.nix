@@ -99,14 +99,6 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  my-python-packages = python-packages: with python-packages; [
-    pandas
-    requests
-    # other python packages you want
-  ]; 
-  python-with-my-packages = python3.withPackages my-python-packages;
-
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -128,7 +120,9 @@
     runelite
     steam
     steam-run-native
+    shutter
     usbutils
+    xournalpp
     vim 
   ];
 
@@ -174,6 +168,9 @@
     options = ["nfsvers=4.1"];
   };
 
+  services.blueman.enable = true;
+
+  services.xserver.wacom.enable =  true;
 
 }
  

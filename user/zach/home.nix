@@ -35,13 +35,13 @@
     pinentryFlavor = "qt";
   };
   
- nixpkgs.overlays = [
-   (import (builtins.fetchTarball {
-     url = https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz;
-		 sha256 = "09b0yc3nw4n3zl3m5lhwc1jxl2j1v439l8ibjffma75pr3w9wqpd";
-     
-   }))
- ];
+ # nixpkgs.overlays = [
+ #   (import (builtins.fetchTarball {
+ #     url = https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz;
+	# 	 sha256 = "09b0yc3nw4n3zl3m5lhwc1jxl2j1v439l8ibjffma75pr3w9wqpd";
+ #     
+ #   }))
+ # ];
 
   home.packages = with pkgs; [
     clang-tools
