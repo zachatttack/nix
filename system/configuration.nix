@@ -45,9 +45,9 @@
 
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
-  #services.xserver.desktopManager.gnome.enable = true;
-  services.xserver.displayManager.defaultSession = "none+awesome";
-  services.xserver.windowManager.awesome.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
+  # services.xserver.displayManager.defaultSession = "none+awesome";
+  # services.xserver.windowManager.awesome.enable = true;
 
 
   # Configure keymap in X11
@@ -124,6 +124,15 @@
     usbutils
     xournalpp
     vim 
+    imagemagick
+    lutris
+    liberation_ttf
+    wineWowPackages.full
+    yubioauth-desktop
+  ];
+  fonts.fonts = with pkgs; [
+    fira-code
+    (nerdfonts.override { fonts = [ "FiraCode" ]; })
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

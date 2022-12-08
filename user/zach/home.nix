@@ -61,10 +61,14 @@
     python38
     rnix-lsp
     sumneko-lua-language-server
-    texlive.combined.scheme-medium
+    texlive.combined.scheme-full
     unzip
     wget
     zsh-autosuggestions
+    emacs28NativeComp
+    ripgrep
+    global
+    dig
   ];
 
   programs.git = {
