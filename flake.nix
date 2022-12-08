@@ -2,7 +2,7 @@
   description = "Zach's Nix config";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-22.05";
+    nixpkgs.url = "nixpkgs/nixos-22.11";
     home-manager.url = "github:nix-community/home-manager/";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
@@ -21,7 +21,7 @@
   in {
     homeManagerConfigurations = {
         zach = home-manager.lib.homeManagerConfiguration {
-          stateVersion = "22.05";
+          stateVersion = "22.11";
           inherit system pkgs;
           username = "zach";
           homeDirectory = "/home/zach";
