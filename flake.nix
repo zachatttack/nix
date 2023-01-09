@@ -10,6 +10,7 @@
   outputs = { self, nixpkgs, home-manager, ... }: 
   let 
     system = "x86_64-linux";
+    defaultPackage.x86_64-linux = home-manager.defaultPackage.x86_64-linux;
     
     pkgs = import nixpkgs {
       inherit system;
@@ -21,15 +22,10 @@
   in {
     homeConfigurations = {
         zach = home-manager.lib.homeManagerConfiguration {
-          stateVersion = "22.11";
-          inherit system pkgs;
-          username = "zach";
-          homeDirectory = "/home/zach";
-          configuration = {
-            imports = [
+          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+            modules = [
               ./user/zach/home.nix
             ];
-          };
         };
       };
 
