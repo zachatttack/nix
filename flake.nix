@@ -19,7 +19,7 @@
     lib = nixpkgs.lib;
 
   in {
-    homeManagerConfigurations = {
+    homeConfigurations = {
         zach = home-manager.lib.homeManagerConfiguration {
           stateVersion = "22.11";
           inherit system pkgs;
