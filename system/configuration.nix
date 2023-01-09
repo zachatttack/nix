@@ -108,6 +108,7 @@
     discord
     feh
     firefox
+    chromium
     gnome.nautilus
     gnome3.gnome-tweaks
     libreoffice
@@ -179,6 +180,16 @@
   services.blueman.enable = true;
 
   services.xserver.wacom.enable =  true;
+
+  services.syncthing = {
+    enable = true;
+    dataDir = "/home/zach";
+    openDefaultPorts = true;
+    configDir = "/home/zach/.config/syncthing";
+    user = "zach";
+    group = "users";
+    guiAddress = "0.0.0.0:8384";
+  };
 
 }
  
